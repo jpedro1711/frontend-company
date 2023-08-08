@@ -21,9 +21,14 @@ export class CustomerService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  getCustomers(): Observable<Customer[]> {
+  getCustomersWithPage(page: number, size: number): Observable<Customer[]> {
+    const params = {
+      page: page.toString(),
+      limit: size.toString(),
+    };
+
     return this.httpClient
-      .get<Customer[]>(this.url)
+      .get<Customer[]>(this.url, { params })
       .pipe(retry(2), catchError(this.handleError));
   }
 

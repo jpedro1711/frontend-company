@@ -2,6 +2,22 @@
   padding: 2rem;
 }
 
-.action-container button {
+.action-container a {
   margin: 0px 5px;
+}
+
+#table-container table {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#prev-next {
+  display: flex;
+  align-items: center;
 }
