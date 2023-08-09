@@ -34,8 +34,18 @@ export class CustomerListComponent implements OnInit {
     { value: '15', viewValue: '15' },
   ];
 
+  customerName: string = '';
+  notFound: boolean = false;
+
   ngOnInit(): void {
     this.getCustomersWithPage();
+  }
+
+  setNotFound(state: boolean) {
+    this.notFound == state;
+    if (state == true) {
+      this.getCustomersWithPage();
+    }
   }
 
   nextPage() {
@@ -63,17 +73,44 @@ export class CustomerListComponent implements OnInit {
     this.getCustomersWithPage();
   }
 
+  handleFindByName(event: any) {
+    this.customerName = event.target.value;
+    if (event.target.value == '') {
+      this.getCustomersWithPage();
+    } else {
+      this.getCustomersByName(this.customerName);
+    }
+  }
+
   getCustomersWithPage() {
     this.customerService
       .getCustomersWithPage(this.currentPage, this.pageSize)
       .subscribe(
+        (customers) => ((this.customers = customers), this.updateData())
+      );
+  }
+
+  getCustomersByName(name: string) {
+    this.customerService
+      .findCustomerByName(name)
+      .subscribe(
         (customers) => (
           (this.customers = customers),
-          (this.dataSource = this.customers._embedded.customerList),
-          (this.totalElements = this.customers.page.totalElements),
-          (this.totalPages = this.customers.page.totalPages),
-          (this.isLoading = false)
+          this.customers._embedded == undefined
+            ? this.setNotFound(true)
+            : this.setNotFound(false),
+          this.updateData()
         )
       );
+  }
+
+  updateData() {
+    if (this.customers._embedded == undefined) {
+      return;
+    }
+    (this.dataSource = this.customers._embedded.customerList),
+      (this.totalElements = this.customers.page.totalElements),
+      (this.totalPages = this.customers.page.totalPages),
+      (this.isLoading = false);
   }
 }

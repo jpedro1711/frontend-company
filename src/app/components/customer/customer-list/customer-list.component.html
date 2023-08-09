@@ -9,10 +9,24 @@
         <button mat-icon-button color="primary" (click)="previousPage()">
           <mat-icon>arrow_back</mat-icon>
         </button>
-        <button mat-stroked-button color="primary">{{ currentPage }}</button>
+        <button mat-stroked-button color="primary">
+          {{ currentPage + 1 }}
+        </button>
         <button mat-icon-button color="primary" (click)="nextPage()">
           <mat-icon>arrow_forward</mat-icon>
         </button>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Find customer by name</mat-label>
+          <input
+            matInput
+            placeholder="John Doe"
+            [(ngModel)]="customerName"
+            (input)="handleFindByName($event)"
+          />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
       </div>
       <div>
         <mat-form-field>

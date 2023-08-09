@@ -32,6 +32,14 @@ export class CustomerService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
+  findCustomerByName(name: string) {
+    const urlByName = this.url + '/name/' + name;
+
+    return this.httpClient
+      .get<Customer[]>(urlByName)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
