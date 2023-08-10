@@ -1,0 +1,25 @@
+<div class="container" *ngIf="customer != null">
+  <div id="form">
+    <h1>Delete customer</h1>
+    <mat-form-field>
+      <input matInput disabled="true" [value]="customer.name" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput disabled="true" [value]="customer.address" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput disabled="true" [value]="customer.phoneNumber" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput disabled="true" [value]="customer.email" />
+    </mat-form-field>
+    <div class="btn-container">
+      <a mat-raised-button href="/customers"
+        >cancel <mat-icon>cancel</mat-icon></a
+      >
+      <button mat-raised-button color="warn" (click)="deleteCustomer()">
+        delete <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

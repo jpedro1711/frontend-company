@@ -89,7 +89,9 @@
           <a mat-mini-fab color="primary" href="#"
             ><mat-icon>create</mat-icon></a
           >
-          <a mat-mini-fab color="warn" href="#"><mat-icon>delete</mat-icon></a>
+          <a mat-mini-fab color="warn" [href]="'/deleteCustomer/' + customer.id"
+            ><mat-icon>delete</mat-icon>
+          </a>
         </td>
       </ng-container>
 

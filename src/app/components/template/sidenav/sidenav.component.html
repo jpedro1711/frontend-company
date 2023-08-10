@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" #drawer opened>
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <a routerLink="/home">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="home"
+          ></mat-icon>
+          Home
+        </a>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <a routerLink="/customers">
+          <mat-icon>account_circle</mat-icon>
+          Customers
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-mini-fab color="primary" (click)="drawer.toggle()">
+      <mat-icon>reorder</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

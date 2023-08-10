@@ -1,0 +1,24 @@
+.mat-drawer {
+  width: 200px;
+}
+
+.example-container {
+  height: 100vh;
+}
+
+mat-drawer-content {
+  padding: 10px;
+}
+
+a {
+  display: flex;
+  align-items: centerd;
+  gap: 2px;
+  text-align: left;
+  text-decoration: none;
+  color: #000;
+}
+
+mat-list-item:hover {
+  background-color: #f2f2f2;
+}

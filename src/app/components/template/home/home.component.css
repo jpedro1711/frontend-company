@@ -1,0 +1,17 @@
+.container {
+  height: 100vh;
+}
+
+.example-container {
+  height: 100vh;
+}
+
+mat-card {
+  margin: 2rem;
+}
+
+#title-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

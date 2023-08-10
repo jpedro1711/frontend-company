@@ -17,6 +17,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { HomeComponent } from './components/template/home/home.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { SidenavComponent } from './components/template/sidenav/sidenav.component';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { DeleteCustomerComponent } from './components/customer/delete-customer/delete-customer.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,6 +31,9 @@ import { MatInputModule } from '@angular/material/input';
     HeaderComponent,
     FooterComponent,
     CustomerListComponent,
+    HomeComponent,
+    SidenavComponent,
+    DeleteCustomerComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +49,10 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     FormsModule,
     MatInputModule,
+    MatListModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
