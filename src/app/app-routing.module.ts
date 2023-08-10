@@ -4,11 +4,13 @@ import { CustomerListComponent } from './components/customer/customer-list/custo
 import { HomeComponent } from './components/template/home/home.component';
 import { DeleteCustomerComponent } from './components/customer/delete-customer/delete-customer.component';
 import { UpdateCustomerComponent } from './components/customer/update-customer/update-customer.component';
+import { CreateCustomerComponent } from './components/customer/create-customer/create-customer.component';
 
 const routes: Routes = [
   { path: 'customers', component: CustomerListComponent },
   { path: 'deleteCustomer/:id', component: DeleteCustomerComponent },
   { path: 'updateCustomer/:id', component: UpdateCustomerComponent },
+  { path: 'createCustomer', component: CreateCustomerComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
 ];

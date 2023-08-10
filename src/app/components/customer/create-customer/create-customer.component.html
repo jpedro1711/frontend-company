@@ -1,0 +1,29 @@
+<div class="container">
+  <div id="form">
+    <h1>Save customer</h1>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput [(ngModel)]="address" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone-number</mat-label>
+      <input matInput [(ngModel)]="phoneNumber" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input matInput [(ngModel)]="email" />
+    </mat-form-field>
+    <div class="btn-container">
+      <a mat-raised-button href="/customers"
+        >cancel <mat-icon>cancel</mat-icon></a
+      >
+      <button mat-raised-button color="primary" (click)="saveCustomer()">
+        save customer <mat-icon>create</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

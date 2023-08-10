@@ -25,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { DeleteCustomerComponent } from './components/customer/delete-customer/delete-customer.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UpdateCustomerComponent } from './components/customer/update-customer/update-customer.component';
+import { CreateCustomerComponent } from './components/customer/create-customer/create-customer.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UpdateCustomerComponent } from './components/customer/update-customer/u
     SidenavComponent,
     DeleteCustomerComponent,
     UpdateCustomerComponent,
+    CreateCustomerComponent,
   ],
   imports: [
     BrowserModule,

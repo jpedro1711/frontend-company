@@ -1,0 +1,13 @@
+.container {
+  padding: 2rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-container {
+  display: flex;
+  gap: 5px;
+}

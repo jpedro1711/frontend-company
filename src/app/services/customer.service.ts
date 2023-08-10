@@ -67,6 +67,12 @@ export class CustomerService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  createCustomer(customer: Partial<Customer>) {
+    return this.httpClient
+      .post<Customer>(this.url, JSON.stringify(customer), this.httpOptions)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
   findCustomerById(id: number) {
     const url = this.url + '/' + id;
 

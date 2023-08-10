@@ -15,8 +15,8 @@ export class UpdateCustomerComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private customerService: CustomerService,
-    private router: Router
+    private router: Router,
+    private customerService: CustomerService
   ) {}
 
   ngOnInit(): void {
