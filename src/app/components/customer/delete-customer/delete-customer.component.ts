@@ -17,7 +17,6 @@ export class DeleteCustomerComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private customerService: CustomerService,
-    private location: Location,
     private router: Router
   ) {}
 

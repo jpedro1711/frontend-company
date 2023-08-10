@@ -57,6 +57,16 @@ export class CustomerService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
+  updateCustomer(customer: Partial<Customer>, id: number) {
+    return this.httpClient
+      .put<Customer>(
+        this.url + '/' + id,
+        JSON.stringify(customer),
+        this.httpOptions
+      )
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
   findCustomerById(id: number) {
     const url = this.url + '/' + id;
 
