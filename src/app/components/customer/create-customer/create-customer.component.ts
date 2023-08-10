@@ -10,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CreateCustomerComponent {
   constructor(
     private customerService: CustomerService,
-    private route: ActivatedRoute,
     private router: Router
   ) {}
 
