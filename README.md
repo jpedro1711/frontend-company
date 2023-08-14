@@ -11,14 +11,14 @@ Projeto feito em Angular que realiza as operações de CRUD consumindo uma API. 
 
 
 
-### Pré-requisitos para executar o projeto
-Back-end / API
+## Pré-requisitos para executar o projeto
+### Back-end / API
 * Ter clonado o repositório: https://github.com/jpedro1711/company-api
 * Ter o Java e uma IDE instalada
 * Ter o mysql instalado
 * Ter realizado conexão com seu banco de dados local e executado a aplicação
 
-## Front-end
+### Front-end
 * Ter o angular CLI instalado
 * Ter o NodeJS instalado
 
