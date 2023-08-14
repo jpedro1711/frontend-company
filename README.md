@@ -23,5 +23,5 @@ Projeto feito em Angular que realiza as operações de CRUD consumindo uma API. 
 * Ter o NodeJS instalado
 
 ## Como executar o projeto
-Para rodar o projeto, você deve clonar ele para sua máquina e abrir um terminal dentro da pasta `frontend`. Depois, é só digitar `npm i`para baixar as dependências e executar o comando `ng serve` e abrir o navegador em `http://localhost:4200/`.
+Para rodar o projeto, você deve clonar ele para sua máquina e abrir um terminal dentro da pasta `frontend`. Depois, é só digitar `npm i`para baixar as dependências, executar o comando `ng serve` para iniciar o servidor local e abrir o navegador em `http://localhost:4200/`.
 
