@@ -26,6 +26,8 @@ import { DeleteCustomerComponent } from './components/customer/delete-customer/d
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { UpdateCustomerComponent } from './components/customer/update-customer/update-customer.component';
 import { CreateCustomerComponent } from './components/customer/create-customer/create-customer.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { CreateCustomerComponent } from './components/customer/create-customer/c
     MatInputModule,
     MatListModule,
     MatSidenavModule,
+    MatFormFieldModule,
     MatCardModule,
+    ReactiveFormsModule,
     MatSnackBarModule,
   ],
   providers: [],

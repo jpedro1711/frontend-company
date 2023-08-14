@@ -1,21 +1,33 @@
 <div class="container">
-  <div id="form">
+  <form id="form" [formGroup]="form">
     <h1>Save customer</h1>
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="name" />
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="form.get('name')?.invalid">{{
+        getErrorMessage("name")
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Address</mat-label>
-      <input matInput [(ngModel)]="address" />
+      <input matInput formControlName="address" />
+      <mat-error *ngIf="form.get('address')?.invalid">{{
+        getErrorMessage("address")
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Phone-number</mat-label>
-      <input matInput [(ngModel)]="phoneNumber" />
+      <input matInput formControlName="phoneNumber" />
+      <mat-error *ngIf="form.get('phoneNumber')?.invalid">{{
+        getErrorMessage("phoneNumber")
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label>E-mail</mat-label>
-      <input matInput [(ngModel)]="email" />
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="form.get('email')?.invalid">{{
+        getErrorMessage("email")
+      }}</mat-error>
     </mat-form-field>
     <div class="btn-container">
       <a mat-raised-button href="/customers"
@@ -25,5 +37,5 @@
         save customer <mat-icon>create</mat-icon>
       </button>
     </div>
-  </div>
+  </form>
 </div>
