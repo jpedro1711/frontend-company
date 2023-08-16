@@ -55,6 +55,14 @@ export class CreateCustomerComponent {
     });
   }
 
+  handleSubmit() {
+    if (this.form.valid) {
+      this.saveCustomer();
+    } else {
+      this.customerService.showErrorMessage('Existem campos inválidos!');
+    }
+  }
+
   getErrorMessage(fieldName: string) {
     const field = this.form.get(fieldName);
     if (field?.hasError('required')) {

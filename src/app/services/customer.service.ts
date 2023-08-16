@@ -42,6 +42,15 @@ export class CustomerService {
     });
   }
 
+  showErrorMessage(msg: string) {
+    this.snackBar.open(msg, '', {
+      duration: 3000,
+      panelClass: ['error-snackbar'],
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+    });
+  }
+
   findCustomerByName(name: string) {
     const urlByName = this.url + '/name/' + name;
 
