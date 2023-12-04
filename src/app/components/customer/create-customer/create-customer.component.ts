@@ -22,6 +22,10 @@ export class CreateCustomerComponent {
     private formBuilder: FormBuilder
   ) {}
 
+  casado: string = '';
+  genero: string = '';
+  filhos: string = '';
+
   form = this.formBuilder.group({
     id: [''],
     name: [
@@ -40,10 +44,6 @@ export class CreateCustomerComponent {
       '',
       [Validators.required, Validators.email, Validators.maxLength(255)],
     ],
-    gender: [
-      '',
-      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
-    ],
     country: [
       '',
       [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
@@ -52,12 +52,7 @@ export class CreateCustomerComponent {
       '',
       [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
     ],
-    childrenCount: [0, [Validators.required]],
-    isMarried: [
-      false,
-      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
-    ],
-    salary: [10000, [Validators.required]],
+    salary: [[Validators.required]],
     city: [
       '',
       [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
@@ -65,20 +60,21 @@ export class CreateCustomerComponent {
   });
 
   saveCustomer() {
+    let marr: boolean = this.casado == 'nao' ? false : true;
+    console.log(marr);
     const data: Partial<Customer> = {
       name: this.form.get('name')?.value,
       address: this.form.get('address')?.value,
       phoneNumber: this.form.get('phoneNumber')?.value,
       email: this.form.get('email')?.value,
-      gender: this.form.get('gender')?.value,
+      gender: this.genero,
       country: this.form.get('country')?.value,
-      childrenCount: this.form.get('childrenCount')?.value,
+      childrenCount: Number.parseInt(this.filhos),
       city: this.form.get('city')?.value,
       creditCardType: this.form.get('creditCardType')?.value,
       salary: this.form.get('salary')?.value,
-      isMarried: this.form.get('isMarried')?.value,
+      isMarried: marr,
     };
-    console.log(data.salary);
     this.customerService.createCustomer(data).subscribe((response) => {
       this.router.navigate(['/customers']);
       this.customerService.showMessage('Customer created successfully!');

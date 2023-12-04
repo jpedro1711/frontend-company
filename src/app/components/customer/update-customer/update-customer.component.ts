@@ -29,7 +29,9 @@ export class UpdateCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.getCustomerById();
   }
-
+  casado: string = '';
+  genero: string = '';
+  filhos: string = '';
   form = this.formBuilder.group({
     id: [''],
     name: [
@@ -48,21 +50,12 @@ export class UpdateCustomerComponent implements OnInit {
       this.customer?.email,
       [Validators.required, Validators.email, Validators.maxLength(255)],
     ],
-    gender: [
-      this.customer?.gender,
-      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
-    ],
     country: [
       this.customer?.country,
       [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
     ],
     creditCardType: [
       this.customer?.creditCardType,
-      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
-    ],
-    childrenCount: [this.customer?.childrenCount, [Validators.required]],
-    isMarried: [
-      this.customer?.isMarried,
       [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
     ],
     salary: [this.customer?.salary, [Validators.required]],
@@ -84,12 +77,9 @@ export class UpdateCustomerComponent implements OnInit {
           phoneNumber: customer.phoneNumber,
           email: customer.email,
           country: customer.country,
-          childrenCount: customer.childrenCount,
           city: customer.city,
           creditCardType: customer.creditCardType,
           salary: customer.salary,
-          gender: customer.gender,
-          isMarried: customer.isMarried,
         })
       )
     );
@@ -98,28 +88,19 @@ export class UpdateCustomerComponent implements OnInit {
   updateCustomer() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (this.customer) {
-      let m;
-      let s;
-      if (this.form.get('salary')?.value) {
-        s = this.form.get('salary')?.value;
-      }
-      if (this.form.get('isMarried')?.value != null) {
-        let string = this.form.get('isMarried')?.value;
-        s = Number.parseFloat('12');
-      }
-
+      let marr: boolean = this.casado == 'nao' ? false : true;
       const data: Partial<Customer> = {
         name: this.form.get('name')?.value,
         address: this.form.get('address')?.value,
         phoneNumber: this.form.get('phoneNumber')?.value,
         email: this.form.get('email')?.value,
-        gender: this.form.get('gender')?.value,
+        gender: this.genero,
         country: this.form.get('country')?.value,
-        childrenCount: this.form.get('childrenCount')?.value,
+        childrenCount: Number.parseInt(this.filhos),
         city: this.form.get('city')?.value,
         creditCardType: this.form.get('creditCardType')?.value,
         salary: this.form.get('salary')?.value,
-        isMarried: this.form.get('isMarried')?.value,
+        isMarried: marr,
       };
       console.log(data);
       this.customerService.updateCustomer(data, id).subscribe((response) => {

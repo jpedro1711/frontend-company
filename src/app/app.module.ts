@@ -14,7 +14,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HomeComponent } from './components/template/home/home.component';
@@ -28,7 +27,7 @@ import { UpdateCustomerComponent } from './components/customer/update-customer/u
 import { CreateCustomerComponent } from './components/customer/create-customer/create-customer.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +60,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

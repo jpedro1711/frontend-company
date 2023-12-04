@@ -52,10 +52,14 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Número de filhos</mat-label>
-      <input matInput type="number" formControlName="childrenCount" />
-      <mat-error *ngIf="form.get('childrenCount')?.invalid">{{
-        getErrorMessage("childrenCount")
-      }}</mat-error>
+      <mat-select [(value)]="filhos">
+        <mat-option value="0">Nenhum filho</mat-option>
+        <mat-option value="1">1 Filho</mat-option>
+        <mat-option value="2">2 Filhos</mat-option>
+        <mat-option value="3">3 Filhos</mat-option>
+        <mat-option value="4">4 Filhos</mat-option>
+        <mat-option value="5">5 Filhos</mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Salário</mat-label>
@@ -65,18 +69,19 @@
       }}</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Casado</mat-label>
-      <input matInput formControlName="isMarried" />
-      <mat-error *ngIf="form.get('isMarried')?.invalid">{{
-        getErrorMessage("isMarried")
-      }}</mat-error>
+      <mat-label>Estado Civil</mat-label>
+      <mat-select [(value)]="casado">
+        <mat-option value="sim">Casado</mat-option>
+        <mat-option value="nao">Solteiro</mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Gênero</mat-label>
-      <input matInput formControlName="gender" />
-      <mat-error *ngIf="form.get('gender')?.invalid">{{
-        getErrorMessage("gender")
-      }}</mat-error>
+      <mat-select [(value)]="genero">
+        <mat-option value="male">Masculino</mat-option>
+        <mat-option value="female">Feminino</mat-option>
+        <mat-option value="other">Outro</mat-option>
+      </mat-select>
     </mat-form-field>
     <div class="btn-container">
       <a mat-raised-button href="/customers"
