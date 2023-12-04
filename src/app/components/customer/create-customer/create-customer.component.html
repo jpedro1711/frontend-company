@@ -29,6 +29,55 @@
         getErrorMessage("email")
       }}</mat-error>
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>País</mat-label>
+      <input matInput formControlName="country" />
+      <mat-error *ngIf="form.get('country')?.invalid">{{
+        getErrorMessage("country")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Cidade</mat-label>
+      <input matInput formControlName="city" />
+      <mat-error *ngIf="form.get('city')?.invalid">{{
+        getErrorMessage("city")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Bandeira do cartão de crédito</mat-label>
+      <input matInput formControlName="creditCardType" />
+      <mat-error *ngIf="form.get('creditCardType')?.invalid">{{
+        getErrorMessage("creditCardType")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Número de filhos</mat-label>
+      <input matInput type="number" formControlName="childrenCount" />
+      <mat-error *ngIf="form.get('childrenCount')?.invalid">{{
+        getErrorMessage("childrenCount")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Salário</mat-label>
+      <input matInput type="number" formControlName="salary" />
+      <mat-error *ngIf="form.get('salary')?.invalid">{{
+        getErrorMessage("salary")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Casado</mat-label>
+      <input matInput formControlName="isMarried" />
+      <mat-error *ngIf="form.get('isMarried')?.invalid">{{
+        getErrorMessage("isMarried")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Gênero</mat-label>
+      <input matInput formControlName="gender" />
+      <mat-error *ngIf="form.get('gender')?.invalid">{{
+        getErrorMessage("gender")
+      }}</mat-error>
+    </mat-form-field>
     <div class="btn-container">
       <a mat-raised-button href="/customers"
         >cancel <mat-icon>cancel</mat-icon></a

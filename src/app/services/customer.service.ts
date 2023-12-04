@@ -59,6 +59,17 @@ export class CustomerService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
+  getCustomersDataset() {
+    const url = 'http://localhost:8080/api/csv/downloadCustomers';
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'text/csv',
+      Accept: 'text/csv',
+    });
+
+    return this.httpClient.get(url, { responseType: 'blob', headers });
+  }
+
   deleteCustomerById(id: number) {
     const url = this.url + '/' + id;
     return this.httpClient

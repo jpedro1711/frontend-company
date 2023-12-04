@@ -40,6 +40,28 @@ export class CreateCustomerComponent {
       '',
       [Validators.required, Validators.email, Validators.maxLength(255)],
     ],
+    gender: [
+      '',
+      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
+    ],
+    country: [
+      '',
+      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
+    ],
+    creditCardType: [
+      '',
+      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
+    ],
+    childrenCount: [0, [Validators.required]],
+    isMarried: [
+      false,
+      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
+    ],
+    salary: [10000, [Validators.required]],
+    city: [
+      '',
+      [Validators.required, Validators.minLength(2), Validators.maxLength(255)],
+    ],
   });
 
   saveCustomer() {
@@ -48,7 +70,15 @@ export class CreateCustomerComponent {
       address: this.form.get('address')?.value,
       phoneNumber: this.form.get('phoneNumber')?.value,
       email: this.form.get('email')?.value,
+      gender: this.form.get('gender')?.value,
+      country: this.form.get('country')?.value,
+      childrenCount: this.form.get('childrenCount')?.value,
+      city: this.form.get('city')?.value,
+      creditCardType: this.form.get('creditCardType')?.value,
+      salary: this.form.get('salary')?.value,
+      isMarried: this.form.get('isMarried')?.value,
     };
+    console.log(data.salary);
     this.customerService.createCustomer(data).subscribe((response) => {
       this.router.navigate(['/customers']);
       this.customerService.showMessage('Customer created successfully!');

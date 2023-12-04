@@ -41,6 +41,20 @@ export class CustomerListComponent implements OnInit {
     this.getCustomersWithPage();
   }
 
+  getCSV() {
+    this.customerService.getCustomersDataset().subscribe((data: Blob) => {
+      // Cria um objeto de URL temporário e cria um link para fazer o download
+      const url = window.URL.createObjectURL(data);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'customers.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      this.customerService.showMessage('Dataset was downloaded!');
+    });
+  }
+
   setNotFound(state: boolean) {
     this.notFound == state;
     if (state == true) {
